@@ -19,7 +19,10 @@ function App() {
       username: username,
       password: password
     }
-    console.log(newUser)
+    
+    setAllUsers([...allUsers, newUser])
+
+
   }
   return (
     <div>
