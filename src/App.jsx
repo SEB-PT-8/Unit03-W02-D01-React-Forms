@@ -16,7 +16,6 @@ function App() {
       <form>
         <label htmlFor="username">username:</label>
         <input value={username} onChange={handleUsername} id="username" type="text" />
-
         <label htmlFor="">password</label>
         <input value={password} onChange={handlePassword} type="password" />
         <button>Sign Up</button>
