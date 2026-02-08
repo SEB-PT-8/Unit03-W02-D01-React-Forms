@@ -1,8 +1,9 @@
-import { use, useState } from "react"
+import { useState } from "react"
 function App() {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [allUsers, setAllUsers] = useState([])
 
   function handleUsername(event){
     setUsername(event.target.value)
@@ -14,6 +15,11 @@ function App() {
 
   function handleSubmit(event){
     event.preventDefault() // makes it so the form doesnt refresh when the submit button is clicked
+    const newUser = {
+      username: username,
+      password: password
+    }
+    console.log(newUser)
   }
   return (
     <div>
@@ -24,6 +30,12 @@ function App() {
         <input value={password} onChange={handlePassword} type="password" />
         <button>Sign Up</button>
       </form>
+
+      {allUsers.map((oneUser)=>
+      <div key={oneUser.username}>
+        <h2>{oneUser.username}</h2>
+      </div>
+      )}
     </div>
 
   )
